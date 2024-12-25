@@ -1,0 +1,201 @@
+/* Général */
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 70px; /* Ajouter un espace en haut de la page pour le header */
+    background-color: #f4f4f4; /* Arrière-plan clair pour toute la page */
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    height: 70px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère sous le header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-img {
+    width: 145px;
+}
+
+.navbar-img img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar-links a {
+    color: #010103;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #070750;
+    transform: translateY(-2px);
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.navbar-buttons-sign-in,
+.navbar-buttons-register {
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-buttons-sign-in {
+    color: #010103;
+}
+
+.navbar-buttons-register {
+    background-color: #070750;
+    border-radius: 3px;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.navbar-buttons-register:hover {
+    background-color: #050540;
+    transform: translateY(-2px);
+}
+
+/* Wrapper principal */
+.wrapper {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 100px auto 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Liste des véhicules - Utiliser CSS Grid */
+.vehicle-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.vehicle-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.vehicle-card h3 {
+    margin: 15px 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.vehicle-card p {
+    padding: 0 10px 15px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Responsivité */
+@media (max-width: 1200px) {
+    .vehicle-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .vehicle-list {
+        grid-template-columns: 1fr; /* 1 colonne pour les écrans plus petits */
+    }
+
+    .navbar-links {
+        display: none; /* Cacher les liens pour les petits écrans */
+    }
+
+    .navbar-buttons {
+        gap: 1rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #070750;
+}
+
+/* Animation de chargement pour les éléments */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.vehicle-card, .navbar, .wrapper {
+    animation: fadeIn 1s ease-out;
+}
